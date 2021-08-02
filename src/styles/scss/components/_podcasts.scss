@@ -1,0 +1,33 @@
+@use '../utilities/' as *;
+
+.podcasts {
+
+  &Container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1080px;
+  }
+
+  &Catalogue {
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // gap: 1.875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &Item {
+      margin-top: 20px;
+      border: 1px solid black;
+      // height: 300px;
+      // width: 500px;
+      border-radius: 10px;
+      padding: 30px 50px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

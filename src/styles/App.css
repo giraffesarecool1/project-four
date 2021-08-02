@@ -55,3 +55,33 @@ ul {
   border-radius: 10px;
   color: #A060F2;
 }
+
+.podcastsContainer {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1080px;
+}
+.podcastsCatalogue {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.podcastsCatalogueItem {
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 30px 50px;
+}
+.podcastsCatalogueItem img {
+  width: 100%;
+}
