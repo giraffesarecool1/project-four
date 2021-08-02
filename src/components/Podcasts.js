@@ -19,7 +19,6 @@ const Podcasts = () => {
         top_level_only: 1
       },
     }).then( res => {
-      // console.log(res.data);
       setPodcasts(res.data.podcasts)
     })
   },[])
@@ -32,8 +31,8 @@ const Podcasts = () => {
             podcasts.map( podcast => {
               return (
                 <li className="podcastsCatalogueItem" key={podcast.id}>
-                  <img src={podcast.thumbnail} alt="" />
-                  <p>{podcast.title}</p>
+                  <img src={podcast.thumbnail} alt={podcast.title} />
+                  <p className="podcastsCatalogueItemTitle">{podcast.title}</p>
                 </li>
               )
             })
