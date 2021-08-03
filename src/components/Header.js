@@ -1,13 +1,16 @@
+import headphones from '../assets/headphonesCC.jpg';
+import soundwhite from '../assets/soundwhite.svg';
+
 const Header = () => {
   return (
     <header className="header">
       
       <div className="headerContainer wrapper">
 
-        <img src="headphonesCC.jpg" alt="a pair of black headphones" />
+        <img src={headphones} alt="a pair of black headphones" />
       
         <div className="textInHeader">
-          <h1 className="headerTitle">Podcast<img src="soundwhite.svg" className="logoWhite" alt="Podcast Planner logo" />Planner</h1>
+          <h1 className="headerTitle">Podcast<img src={soundwhite} className="logoWhite" alt="Podcast Planner logo" />Planner</h1>
           <p className="headerText"><p>Search for podcasts based on your commute time.</p> Listen while you walk, hike or commute to work and save them to a playlist!</p>
         </div>
 
