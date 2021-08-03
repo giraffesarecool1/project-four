@@ -35,6 +35,12 @@ li {
 }
 
 /* Mixin to manage responsive breakpoints */
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
 .header {
   background: #000000;
   color: white;
@@ -44,17 +50,17 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 50px;
+  padding: 20px;
 }
 .headerTitle {
   color: #A060F2;
@@ -65,6 +71,39 @@ li {
 .header .button {
   border: 1px solid white;
   padding: 10px 30px;
-  border-radius: 10px;
+  border-radius: 12px;
   color: #A060F2;
+  margin-bottom: 50px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+.header .button:hover {
+  background-color: #A060F2;
+  border: 1px solid #A060F2;
+  color: white;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+header {
+  background-color: black;
+  height: 100vh;
+}
+header img {
+  max-width: 30vw;
+}
+header h1 {
+  font-family: "Archivo", sans-serif;
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+header p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
+header .logoWhite {
+  width: 12%;
+  vertical-align: middle;
 }

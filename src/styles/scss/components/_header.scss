@@ -1,5 +1,11 @@
 @use '../utilities/' as *;
 
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
 .header {
   background: $black;
   color: white;
@@ -7,10 +13,10 @@
   
   &Container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    padding: 20px;
   }
   
   &Title {
@@ -24,7 +30,44 @@
   .button {
     border: 1px solid white;
     padding: 10px 30px;
-    border-radius: 10px;
+    border-radius: 12px;
     color: $purple;
+    margin-bottom: 50px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+
+  .button:hover {
+    background-color: $purple;
+    border: 1px solid $purple;
+    color: white;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+header {
+  background-color: black;
+  height: 100vh;
+
+  img {
+    max-width: 30vw;  
+  }
+
+  h1 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 500;
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+
+  .logoWhite {
+    width: 12%;
+    vertical-align: middle;
   }
 }
