@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import AddFavorite from "./AddFavorite";
 
 const Podcasts = () => {
 
@@ -14,10 +15,7 @@ const Podcasts = () => {
       dataResponse: 'json',
       headers: {
         "X-ListenAPI-Key": apiKey,
-      },
-      params: {
-        top_level_only: 1
-      },
+      }
     }).then( res => {
       setPodcasts(res.data.podcasts)
     })
@@ -34,6 +32,7 @@ const Podcasts = () => {
                   <img src={podcast.thumbnail} alt={podcast.title} />
                   {/* <p className="podcastsCatalogueItemTitle">{podcast.title}</p> */}
                   <div className="podcastsCatalogueItemDesc">{podcast.description}</div>
+                  <AddFavorite />
                 </li>
               )
             })
