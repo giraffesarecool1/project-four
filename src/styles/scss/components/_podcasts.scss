@@ -28,13 +28,14 @@
     }
 
     &Item {
+      position: relative;
       width: 300px;
       max-height: 300px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      margin-top: 20px;
+      margin-top: 50px;
       border-radius: 30px;
       padding: 40px 50px;
       text-align: center;
@@ -65,6 +66,28 @@
         text-overflow: ellipsis;
         width: 190px;
         height: 20px;
+      }
+
+      &Add {
+        position: absolute;
+        right: 0;
+        top: 16px;
+        font-size: 3rem;
+        cursor: pointer;
+        border-radius: 2px;
+        border: none;
+        outline: none;
+        padding: 10px 25px;
+        background-color: transparent;
+        
+        &Icon {
+          transition: all 0.3s ease;
+          color: red;
+        }
+
+        &Icon:hover {
+          transform: scale(1.3);
+        }
       }
     }
   }
