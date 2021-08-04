@@ -42,7 +42,7 @@ function SearchInputForm(props) {
 
     return (
         <section id="getStarted">
-            <div className="inputForm formWrapper">
+            <form className="inputForm formWrapper">
                 
                 <label className="formLabel">
                     How long is your journey today?
@@ -50,8 +50,12 @@ function SearchInputForm(props) {
                     <p>{props.walkTime} minutes</p>
                 </label>
 
-                <button className="genresBtn" onClick={props.displayGenreSelection}>Select a Genre</button>            
-            </div>
+                <button className="genresBtn" onClick={props.displayGenreSelection}>Select a Genre</button> 
+
+                {/* Not sure if we want this button? Or if radio buttons populates podcast list? */}
+                <button className="submitBtn" onClick={props.handleSubmit}>Submit</button>
+
+            </form>
         </section>
     );
 };

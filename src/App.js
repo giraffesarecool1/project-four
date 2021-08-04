@@ -6,12 +6,14 @@ import SearchInputForm from "./searchInputForm.js";
 import Header from "./components/Header";
 import DisplayPodcasts from "./DisplayPodcasts.js";
 import Podcasts from "./components/Podcasts";
+import SavePlaylist from "./components/SavePlaylist";
 
 function App() {
   const [walkTime, updateWalkTime] = useState(1);
   const [allPodcasts, setAllPodcasts] = useState([]);
   const [genreDisplay, setGenreDisplay] = useState(0);
   const [theGenre, setTheGenre] = useState("");
+  const [genreFormSubmitted, setGenreFormSubmitted] = useState(0);
 
   const handleChange = (e) => {
     function changehandler(e) {
@@ -28,7 +30,7 @@ function App() {
         "X-ListenAPI-Key": "0646ea62032045e0b681095308e28e1a",
       },
       params: {
-        q: "car",
+        q: "finance",
         top_level_only: 1,
         type: "episode",
         len_min: walkTime - 2,
@@ -39,7 +41,9 @@ function App() {
       const PodcastArray = response.data;
       setAllPodcasts(PodcastArray);
       console.log(PodcastArray);
-    });
+    }).then(
+      setGenreFormSubmitted(1)
+    )
   };
 
   const handleRadios = (e) => {
@@ -61,10 +65,11 @@ function App() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         displayGenreSelection={displayGenreSelection}
+        setGenreFormSubmitted={setGenreFormSubmitted}
       />
       {genreDisplay == 1 && <DisplayPodcasts handleRadios={handleRadios} />}
+      {genreFormSubmitted == 1 && <SavePlaylist allPodcasts={allPodcasts} />}
       <Podcasts />   
-      
     </div>
   );
 }

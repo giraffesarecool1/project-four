@@ -21,7 +21,6 @@ const DisplayPodcasts = (props) => {
             console.log(theGenreList);
         })}, [])
     return (
-
         <section>
             <form className="genreDiv">
 
