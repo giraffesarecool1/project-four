@@ -11,15 +11,8 @@ const Header = () => {
       
         <div className="textInHeader">
           <h1 className="headerTitle">Podcast<img src={soundwhite} className="logoWhite" alt="Podcast Planner logo" />Planner</h1>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
           <p className="headerText">Search for podcasts based on your commute time.</p> <p>Listen while you walk, hike or commute to work and save them to a playlist!</p>
-=======
-          <p className="headerText"><p>Search for podcasts based on your travel time.</p> Listen while you walk, hike or commute to work and save them to your playlist!</p>
->>>>>>> Stashed changes
-=======
-          <p className="headerText"><p>Search for podcasts based on your travel time.</p> Listen while you walk, hike or commute to work and save them to your playlist!</p>
->>>>>>> Stashed changes
+          
         </div>
 
       </div> 
