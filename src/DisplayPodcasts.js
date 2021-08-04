@@ -21,20 +21,23 @@ const DisplayPodcasts = (props) => {
             console.log(theGenreList);
         })}, [])
     return (
+
         <section>
-            <h2>Please select a genre</h2>
             <form className="genreDiv">
 
                 {
                      theGenreList.map((genreObj) => {
                         return (
-                            <div className="photo-container" key={genreObj.id}>
+                            <div className="radioBtns" key={genreObj.id}>
                                 <input type="radio" value={genreObj.name} onChange={props.handleRadios}></input>
                                 <label>{genreObj.name}</label>
-                            </div>
+                            </div>                            
                         )
                     })}
             </form>
+
+                {/* Not sure if we want this button? Or if radio buttons populates podcast list? */}
+            {/* <button className="submitBtn" onClick={props.handleSubmit}>Submit</button> */}
         </section>
     )
                 }
