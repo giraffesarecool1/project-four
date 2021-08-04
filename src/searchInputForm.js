@@ -41,19 +41,19 @@ function SearchInputForm(props) {
 
 
     return (
-        <div className="inputForm">
-            <button onClick={props.displayGenreSelection}>Genres</button>
-            <label>
-            How long do you want to walk for?
-            <input type="range" min="5" max="240" step="5" id="slider" onChange={props.handleChange} />
-            <p>{props.walkTime}</p>
-        </label>
-        <button onClick={props.handleSubmit}>Submit</button>
-        
+        <section id="getStarted">
+            <div className="inputForm formWrapper">
+                
+                <label>
+                    How long is your journey today?
+                    <input type="range" min="5" max="240" step="5" id="slider" defaultValue="5" onChange={props.handleChange} />
+                    <p>{props.walkTime} minutes</p>
+                </label>
 
-        </div>
+                <button className="genresBtn" onClick={props.displayGenreSelection}>Select a Genre</button>            
+            </div>
+        </section>
     );
-
 };
 
 export default SearchInputForm;

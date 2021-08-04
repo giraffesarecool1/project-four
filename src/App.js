@@ -63,7 +63,8 @@ function App() {
         displayGenreSelection={displayGenreSelection}
       />
       {genreDisplay == 1 && <DisplayPodcasts handleRadios={handleRadios} />}
-      <Podcasts />
+      <Podcasts />   
+      
     </div>
   );
 }

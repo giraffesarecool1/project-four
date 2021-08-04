@@ -313,7 +313,7 @@ li {
   margin-bottom: 50px;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 .header .button:hover {
   background-color: #A060F2;
@@ -333,23 +333,32 @@ header img {
 header h1 {
   font-family: "Archivo", sans-serif;
   font-weight: 500;
-  font-size: 2.5rem;
+  font-size: 4rem;
 }
 header p {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 header .logoWhite {
   width: 12%;
   vertical-align: middle;
 }
 
+
 .podcastsContainer {
   margin: 0 auto;
   max-width: 1080px;
 }
-.podcastsCatalogue {
+
+.formWrapper {
+  width: 40%;
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
+.inputForm {
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -357,6 +366,7 @@ header .logoWhite {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -388,6 +398,121 @@ header .logoWhite {
   position: relative;
   width: 300px;
   max-height: 300px;
+
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 90px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1.8rem;
+}
+.inputForm input[type=range] {
+  width: 100%;
+  margin: 20px 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+.inputForm input[type=range]:focus {
+  outline: none;
+}
+.inputForm input[type=range]::-webkit-slider-runnable-track {
+  background: rgba(160, 96, 242, 0.78);
+  border: 0.2px solid #ffffff;
+  border-radius: 1.3px;
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+}
+.inputForm input[type=range]::-webkit-slider-thumb {
+  margin-top: -4.5px;
+  width: 20px;
+  height: 20px;
+  background: #a060f2;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.inputForm input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #ae78f4;
+}
+.inputForm input[type=range]::-moz-range-track {
+  background: rgba(160, 96, 242, 0.78);
+  border: 0.2px solid #ffffff;
+  border-radius: 1.3px;
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+}
+.inputForm input[type=range]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #a060f2;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.inputForm input[type=range]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 5.2px 0;
+  color: transparent;
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+}
+.inputForm input[type=range]::-ms-fill-lower {
+  background: #9248f0;
+  border: 0.2px solid #ffffff;
+  border-radius: 2.6px;
+}
+.inputForm input[type=range]::-ms-fill-upper {
+  background: rgba(160, 96, 242, 0.78);
+  border: 0.2px solid #ffffff;
+  border-radius: 2.6px;
+}
+.inputForm input[type=range]::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background: #a060f2;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-top: 0px;
+  /*Needed to keep the Edge thumb centred*/
+}
+.inputForm input[type=range]:focus::-ms-fill-lower {
+  background: rgba(160, 96, 242, 0.78);
+}
+.inputForm input[type=range]:focus::-ms-fill-upper {
+  background: #ae78f4;
+}
+
+.genresBtn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  width: 150px;
+  height: 35px;
+  border: none;
+  border-radius: 10px;
+  background-color: #A060F2;
+  color: white;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+.genresBtn:hover {
+  background-color: rgba(17, 17, 17, 0.88);
+  color: white;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.genreDiv {
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -395,6 +520,7 @@ header .logoWhite {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -451,4 +577,28 @@ header .logoWhite {
 .podcastsCatalogueItemAddIcon:hover {
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 400px;
+  padding-top: 50px;
+}
+
+.radioBtns {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+.radioBtns input[type=radio] {
+  cursor: pointer;
+  margin: 15px;
+  border: 1px solid #A060F2;
+}
+.radioBtns label {
+  margin-right: 20px;
+}
+.radioBtns input[type=radio]:hover + label {
+  color: #A060F2;
+  outline: #A060F2;
 }
