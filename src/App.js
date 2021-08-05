@@ -45,8 +45,7 @@ function App() {
       setAllPodcasts(PodcastArray);
       setLoading(true);
       console.log(PodcastArray);
-      setLoading(true);
-    });
+    });    
   };
 
   const handleRadios = (e) => {

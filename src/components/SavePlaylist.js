@@ -5,12 +5,13 @@ const SavePlaylist = (props) => {
     // an empty state to hold the data for firebase
     const [ playlist, setPlaylist ] = useState([]);
     const [ userTitle, setUserTitle ] = useState('');
+    // const [ userResults, setUserResults ] = useState(props.allPodcasts.results);
+    // setUserResults(props.allPodcasts.results);
 
     useEffect( () => {
-        props.loading ? setPlaylist(props.allPodcasts.results) : setPlaylist([])
-        // setPlaylist(props.allPodcasts.results);
-        // console.log(props.allPodcasts.results);
-        console.log(playlist);
+        props.loading ? setPlaylist(props.allPodcasts.results) : setPlaylist([]);
+        console.log('in useEffect', props.allPodcasts.results);
+        console.log('saveplaylist', props.loading)
     }, []);
 
     const playlistObject = {
