@@ -9,12 +9,19 @@ import Podcasts from "./components/Podcasts";
 import Footer from "./components/Footer";
 
 function App() {
-  const [walkTime, updateWalkTime] = useState(1);
+  const [walkTime, updateWalkTime] = useState(5);
   const [allPodcasts, setAllPodcasts] = useState([]);
   const [genreDisplay, setGenreDisplay] = useState(0);
   const [theGenre, setTheGenre] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const [apiKeyWord, setKeyWord] = useState("")
+  
+  const handleChangeKeyword = (e) => {
+    function wordChanger(e) {
+      setKeyWord(e.target.value);
+    }
+    wordChanger(e)
+  }
   const handleChange = (e) => {
     function changehandler(e) {
       updateWalkTime(e.target.value);
@@ -30,7 +37,7 @@ function App() {
         "X-ListenAPI-Key": "0646ea62032045e0b681095308e28e1a",
       },
       params: {
-        q: "car",
+        q: apiKeyWord,
         // top_level_only: 1,
         type: "episode",
         len_min: walkTime - 2,
@@ -64,6 +71,9 @@ function App() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         displayGenreSelection={displayGenreSelection}
+        theGenre={theGenre}
+        handleChangeKeyword={handleChangeKeyword}
+        apiKeyWord={apiKeyWord}
       />
       {genreDisplay == 1 && <DisplayPodcasts handleRadios={handleRadios} />}
   
