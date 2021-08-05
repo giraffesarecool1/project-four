@@ -32,8 +32,8 @@ function App() {
         "X-ListenAPI-Key": "0646ea62032045e0b681095308e28e1a",
       },
       params: {
-        q: "finance",
-        top_level_only: 1,
+        q: "car",
+        // top_level_only: 1,
         type: "episode",
         len_min: walkTime - 2,
         len_max: walkTime + 2,
@@ -42,6 +42,7 @@ function App() {
     }).then((response) => {
       const PodcastArray = response.data;
       setAllPodcasts(PodcastArray);
+      setLoading(true);
       console.log(PodcastArray);
       setLoading(true);
     });
