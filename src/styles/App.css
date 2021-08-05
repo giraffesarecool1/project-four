@@ -244,6 +244,7 @@ h1, h2, h3, h4, p {
   margin: 0;
 }
 
+/* Mixin to manage responsive breakpoints */
 * {
   margin: 0;
   padding: 0;
@@ -256,6 +257,7 @@ body {
 
 a, a:visited, a:hover {
   text-decoration: none;
+  color: #000000;
 }
 
 img {
@@ -271,7 +273,6 @@ li {
   list-style: none;
 }
 
-/* Mixin to manage responsive breakpoints */
 .wrapper {
   width: 80%;
   margin: 0 auto;
