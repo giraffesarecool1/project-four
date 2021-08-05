@@ -6,7 +6,7 @@ import SearchInputForm from "./searchInputForm.js";
 import Header from "./components/Header";
 import DisplayPodcasts from "./DisplayPodcasts.js";
 import Podcasts from "./components/Podcasts";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer.js";
 
 function App() {
   const [walkTime, updateWalkTime] = useState(5);
@@ -76,14 +76,19 @@ function App() {
         apiKeyWord={apiKeyWord}
       />
       {genreDisplay == 1 && <DisplayPodcasts handleRadios={handleRadios} />}
-  
+
+
+      {/* Not sure if we want this button? Or if radio buttons populates podcast list? */}
+      <div className="submitContainer">
+      {theGenre != "" && apiKeyWord != "" && <button className="submitBtn" onClick={handleSubmit}>Submit</button>}
+      </div>  
+
       <Podcasts 
         allPodcasts={allPodcasts} 
         loading={loading}
       />
-
-      <Footer />
   
+       <Footer />
     </div>
   );
 }

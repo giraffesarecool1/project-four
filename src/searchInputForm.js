@@ -54,10 +54,7 @@ function SearchInputForm(props) {
                     <input type="text" onChange={props.handleChangeKeyword}></input>
                 </label>
                 <button className="genresBtn" onClick={props.displayGenreSelection}>Select a Genre</button> 
-
-                {/* Not sure if we want this button? Or if radio buttons populates podcast list? */}
-                {props.theGenre != "" && props.apiKeyWord != "" && <button className="submitBtn" onClick={props.handleSubmit}>Submit</button>}
-                           
+                   
             </div>
         </section>    
     );
