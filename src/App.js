@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import DisplayPodcasts from "./DisplayPodcasts.js";
 import Podcasts from "./components/Podcasts";
 import Footer from "./components/Footer.js";
+import PlaylistLink from "./components/PlaylistLink.js";
 
 function App() {
   const [walkTime, updateWalkTime] = useState(5);
@@ -81,7 +82,9 @@ function App() {
       {/* Not sure if we want this button? Or if radio buttons populates podcast list? */}
       <div className="submitContainer">
       {theGenre != "" && apiKeyWord != "" && <button className="submitBtn" onClick={handleSubmit}>Submit</button>}
-      </div>  
+      </div> 
+
+      <PlaylistLink />
 
       <Podcasts 
         allPodcasts={allPodcasts} 

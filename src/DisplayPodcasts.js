@@ -23,6 +23,7 @@ const DisplayPodcasts = (props) => {
     return (
 
         <section>
+            
             <form className="genreDiv">
 
                 {

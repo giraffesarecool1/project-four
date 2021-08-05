@@ -49,13 +49,19 @@ function SearchInputForm(props) {
                     <input type="range" min="5" max="240" step="5" id="slider" value= {props.walkTime} onChange={props.handleChange} />
                     <p>{props.walkTime} minutes</p>
                 </label>
-                <label>
-                    Podcast Search Keyword
-                    <input type="text" onChange={props.handleChangeKeyword}></input>
-                </label>
+
+                <div className="topicLabel">
+                    <label>
+                        What topic would you like to listen to?
+                        <input type="text" onChange={props.handleChangeKeyword}></input>
+                    </label>
+                </div>
+
                 <button className="genresBtn" onClick={props.displayGenreSelection}>Select a Genre</button> 
-                   
+
             </div>
+
+            
         </section>    
     );
 };
