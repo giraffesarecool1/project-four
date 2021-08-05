@@ -6,6 +6,7 @@ import SearchInputForm from "./searchInputForm.js";
 import Header from "./components/Header";
 import DisplayPodcasts from "./DisplayPodcasts.js";
 import Podcasts from "./components/Podcasts";
+import Footer from "./components/Footer";
 
 function App() {
   const [walkTime, updateWalkTime] = useState(1);
@@ -63,7 +64,11 @@ function App() {
         displayGenreSelection={displayGenreSelection}
       />
       {genreDisplay == 1 && <DisplayPodcasts handleRadios={handleRadios} />}
-      <Podcasts />   
+      <Podcasts />
+
+      <Footer />
+      
+      
       
     </div>
   );

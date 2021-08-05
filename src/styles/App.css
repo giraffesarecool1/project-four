@@ -558,7 +558,8 @@ header .logoWhite {
   background: #ae78f4;
 }
 
-.genresBtn {
+.genresBtn,
+.submitBtn {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
@@ -572,7 +573,8 @@ header .logoWhite {
   margin-bottom: 50px;
   cursor: pointer;
 }
-.genresBtn:hover {
+.genresBtn:hover,
+.submitBtn:hover {
   background-color: rgba(17, 17, 17, 0.88);
   color: white;
   -webkit-transition: all 0.2s ease-in-out;
@@ -611,4 +613,22 @@ header .logoWhite {
 .radioBtns input[type=radio]:hover + label {
   color: #A060F2;
   outline: #A060F2;
+}
+
+footer {
+  background-color: #000000;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  height: 50px;
+  text-align: center;
+  padding-top: 12px;
+  margin-top: 40px;
+}
+footer a {
+  color: white;
+}
+footer a:hover {
+  color: #A060F2;
 }
