@@ -13,7 +13,7 @@ function App() {
   const [allPodcasts, setAllPodcasts] = useState([]);
   const [genreDisplay, setGenreDisplay] = useState(0);
   const [theGenre, setTheGenre] = useState("");
-  // const [genreFormSubmitted, setGenreFormSubmitted] = useState(0);
+  const [genreFormSubmitted, setGenreFormSubmitted] = useState(0);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -22,7 +22,8 @@ function App() {
     }
     changehandler(e);
   };
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     axios({
       url: "https://listen-api.listennotes.com/api/v2/search",
       method: "GET",
@@ -43,10 +44,7 @@ function App() {
       setAllPodcasts(PodcastArray);
       console.log(PodcastArray);
       setLoading(true);
-    })
-    // .then(
-    //   setGenreFormSubmitted(1)
-    // )
+    });
   };
 
   const handleRadios = (e) => {
@@ -56,7 +54,8 @@ function App() {
     }
     radioHandler(e);
   };
-  const displayGenreSelection = () => {
+  const displayGenreSelection = (e) => {
+    e.preventDefault();
     setGenreDisplay(1);
   };
 
@@ -68,10 +67,10 @@ function App() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         displayGenreSelection={displayGenreSelection}
-        // setGenreFormSubmitted={setGenreFormSubmitted}
+        setGenreFormSubmitted={setGenreFormSubmitted}
       />
       {genreDisplay == 1 && <DisplayPodcasts handleRadios={handleRadios} />}
-      {/* {genreFormSubmitted == 1 && <SavePlaylist allPodcasts={allPodcasts} loading={loading} />} */}
+      {genreFormSubmitted == 1 && <SavePlaylist allPodcasts={allPodcasts} loading={loading} />}
       <SavePlaylist allPodcasts={allPodcasts} loading={loading} />
 
       <Podcasts allPodcasts={allPodcasts} loading={loading} />

@@ -24,7 +24,7 @@ const SavePlaylist = (props) => {
         // console.log(e.target.value);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmitPlaylist = (e) => {
         e.preventDefault();
         console.log(setPlaylist);
         const debRef = firebase.database().ref();    
@@ -46,7 +46,7 @@ const SavePlaylist = (props) => {
                     // update this with the title:
                     value={userTitle}
                 />
-                <button onClick={handleSubmit} >Add Playlist</button>
+                <button onClick={handleSubmitPlaylist} >Add Playlist</button>
             </form>
         </div>
     )
