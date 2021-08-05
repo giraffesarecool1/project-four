@@ -30,13 +30,13 @@ const SavePlaylist = (props) => {
 
     // NOTE TO TEAM - I TRIED ADDING A REQUIRED ATTRIBUTE TO THE PLAYLIST NAME/TITLE, BUT IT DOESN'T SEEM TO BE WORKING HOW I EXPECT IT TO - USER CAN STILL SUBMIT THEIR PLAYLIST TO FIREBASE WITHOUT A TITLE?
     return (
-        <div>
-            <form className="playlistForm">
-                <label>Save Playlist</label>
+        <section id="savePlaylist">
+            <form className="playlistForm savePlaylistWrapper">
+                <label className="formLabel">Save Your Playlist</label>
                 <input
                     type="text"
                     id="playlist"
-                    placeholder="name your playlist..."
+                    placeholder="your playlist name..."
                     required="required"
                     aria-required="true"
                     onChange={handleChangeTitle}
@@ -44,9 +44,9 @@ const SavePlaylist = (props) => {
                     // onChange={(e) => setUserTitle(e.target.value)}
                     value={userTitle}
                 />
-                <button onClick={handleSubmitPlaylist} >Add Playlist</button>
+                <button className="playlistBtn" onClick={handleSubmitPlaylist} >Add Playlist</button>
             </form>
-        </div>
+        </section>
     )
 
 }

@@ -545,7 +545,8 @@ header .logoWhite {
 }
 
 .genresBtn,
-.submitBtn {
+.submitBtn,
+.playlistBtn {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
@@ -560,7 +561,8 @@ header .logoWhite {
   cursor: pointer;
 }
 .genresBtn:hover,
-.submitBtn:hover {
+.submitBtn:hover,
+.playlistBtn:hover {
   background-color: rgba(17, 17, 17, 0.88);
   color: white;
   -webkit-transition: all 0.2s ease-in-out;
@@ -599,6 +601,40 @@ header .logoWhite {
 .radioBtns input[type=radio]:hover + label {
   color: #A060F2;
   outline: #A060F2;
+}
+
+.savePlaylistWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.playlistForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1.8rem;
+  padding: 0 25px;
+}
+.playlistForm label {
+  font-size: 2.4rem;
+}
+.playlistForm input {
+  margin-top: 20px;
+}
+
+.playlistBtn {
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 footer {
