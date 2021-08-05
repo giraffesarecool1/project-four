@@ -1,4 +1,5 @@
 // global styles
+@use '../utilities/' as *;
 
 * {
   margin: 0;
@@ -12,6 +13,7 @@ body {
 
 a, a:visited, a:hover {
   text-decoration: none;
+  color: $black;
 }
 
 img {
