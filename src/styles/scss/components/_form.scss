@@ -1,5 +1,6 @@
 @use '../utilities/' as *;
 
+//searchInput Form & savePlaylist Form styles (below)
 .formWrapper {
     width: 40%;
     margin: 0 auto;
@@ -35,7 +36,7 @@
     -webkit-appearance: none;
   }
 
- input[type="range"]::-ms-track {
+  input[type="range"]::-ms-track {
     width: 100%;
     cursor: pointer;
     background: transparent;
@@ -103,7 +104,8 @@
 }
 
 .genresBtn,
-.submitBtn {
+.submitBtn,
+.playlistBtn {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-size: 1.5rem;
@@ -146,13 +148,40 @@
     }
 
     label {
-       margin-right: 20px;
+      margin-right: 20px;
     }
 
     input[type="radio"]:hover + label {
         color: $purple;
         outline: $purple;
     }
+}
+
+// SAVE PLAYLIST STYLES
+
+.savePlaylistWrapper {
+  display: flex;
+}
+
+.playlistForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1.8rem;
+  padding: 0 25px;
+    label {
+      font-size: 2.4rem;
+    }
+    input {
+      margin-top: 20px;
+    }
+}
+
+.playlistBtn {
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .submitContainer {
