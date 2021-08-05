@@ -1,0 +1,21 @@
+@use '../utilities/' as *;
+
+footer {
+    background-color: $black;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    height: 50px;
+    text-align: center;
+    padding-top: 12px;
+    margin-top: 40px;
+
+    a {
+        color: white;
+
+        &:hover {
+            color: $purple;
+        }
+    }   
+}

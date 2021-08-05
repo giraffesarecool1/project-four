@@ -21,20 +21,22 @@ const DisplayPodcasts = (props) => {
             console.log(theGenreList);
         })}, [])
     return (
+
         <section>
-            <h2>Please select a genre</h2>
             <form className="genreDiv">
 
                 {
                      theGenreList.map((genreObj) => {
                         return (
-                            <div className="photo-container" key={genreObj.id}>
+                            <div className="radioBtns" key={genreObj.id}>
                                 <input type="radio" value={genreObj.name} onChange={props.handleRadios}></input>
                                 <label>{genreObj.name}</label>
-                            </div>
+                            </div>                            
                         )
                     })}
             </form>
+
+                
         </section>
     )
                 }
