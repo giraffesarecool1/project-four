@@ -603,6 +603,10 @@ header .logoWhite {
   outline: #A060F2;
 }
 
+.submitContainer {
+  text-align: center;
+}
+
 footer {
   background-color: #000000;
   color: white;
