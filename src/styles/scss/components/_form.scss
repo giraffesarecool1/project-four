@@ -1,5 +1,6 @@
 @use '../utilities/' as *;
 
+//searchInput Form & savePlaylist Form styles (below)
 .formWrapper {
     width: 40%;
     margin: 0 auto;
@@ -35,7 +36,7 @@
     -webkit-appearance: none;
   }
 
- input[type="range"]::-ms-track {
+  input[type="range"]::-ms-track {
     width: 100%;
     cursor: pointer;
     background: transparent;
@@ -103,8 +104,9 @@
 }
 
 .genresBtn,
-.submitBtn {
-    font-family: $font-secondary, sans-serif;
+.submitBtn,
+.playlistBtn {
+    font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-size: 1.5rem;
     width: 150px;
@@ -146,13 +148,58 @@
     }
 
     label {
-       margin-right: 20px;
+      margin-right: 20px;
     }
 
     input[type="radio"]:hover + label {
         color: $purple;
         outline: $purple;
     }
+}
+
+// SAVE PLAYLIST STYLES
+
+.savePlaylistWrapper {
+  display: flex;
+
+}
+
+.playlistForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  vertical-align: center;
+  font-family: $font-primary, sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  margin-top: 50px;
+  margin-right: 90px;
+  padding: 0 25px;
+    label {
+      font-size: 2rem;
+    }
+    input {
+      padding-left: 10px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      margin-top: 10px;
+      border: 1.5px solid $purple;
+      border-radius: 4px;
+
+      &:focus {
+        outline: none;
+        background-color:rgb(245, 238, 245);
+    }
+}
+}
+
+.playlistBtn {
+  font-size: 1.3rem;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 110px;
+  height: 25px;
 }
 
 .submitContainer {
@@ -183,10 +230,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  
-  margin-right: 70px;
+  margin-right: 120px;
   font-family: $font-primary, sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   
    a {
     color: $black;

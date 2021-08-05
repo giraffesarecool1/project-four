@@ -42,7 +42,7 @@ function SearchInputForm(props) {
 
     return (
         <section id="getStarted">
-            <div className="inputForm formWrapper">
+            <form className="inputForm formWrapper">
                 
                 <label className="formLabel">
                     How long is your journey today?
@@ -58,10 +58,7 @@ function SearchInputForm(props) {
                 </div>
 
                 <button className="genresBtn" onClick={props.displayGenreSelection}>Select a Genre</button> 
-
-            </div>
-
-            
+            </form>
         </section>    
     );
 };

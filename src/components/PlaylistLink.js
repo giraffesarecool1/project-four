@@ -6,7 +6,7 @@ const PlaylistLink = () => {
         <div className="playlistLink">
 
             <img src={soundpurple} alt="purple logo" className="purpleLogo" />
-            <a href="#playlists">View my playlists</a>
+            <a href="#playlists">View your playlists</a>
 
         </div>    
     )
