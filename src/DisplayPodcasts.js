@@ -35,8 +35,7 @@ const DisplayPodcasts = (props) => {
                     })}
             </form>
 
-                {/* Not sure if we want this button? Or if radio buttons populates podcast list? */}
-            {/* <button className="submitBtn" onClick={props.handleSubmit}>Submit</button> */}
+                
         </section>
     )
                 }

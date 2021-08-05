@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import DisplayPodcasts from "./DisplayPodcasts.js";
 import Podcasts from "./components/Podcasts";
 import SavePlaylist from "./components/SavePlaylist";
+import Footer from "./components/Footer";
 
 function App() {
   const [walkTime, updateWalkTime] = useState(1);

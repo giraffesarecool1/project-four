@@ -46,7 +46,7 @@ function SearchInputForm(props) {
                 
                 <label className="formLabel">
                     How long is your journey today?
-                    <input type="range" min="5" max="240" step="5" id="slider" defaultValue="5" onChange={props.handleChange} />
+                    <input type="range" min="5" max="240" step="5" id="slider" value= {props.walkTime} onChange={props.handleChange} />
                     <p>{props.walkTime} minutes</p>
                 </label>
 
