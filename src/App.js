@@ -36,8 +36,8 @@ function App() {
         q: "car",
         // top_level_only: 1,
         type: "episode",
-        len_min: walkTime - 2,
-        len_max: walkTime + 2,
+        len_min: +walkTime - 2,
+        len_max: +walkTime + 2,
         genre_ids: theGenre,
       },
     }).then((response) => {
