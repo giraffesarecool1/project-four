@@ -8,6 +8,7 @@ import DisplayPodcasts from "./DisplayPodcasts.js";
 import Podcasts from "./components/Podcasts";
 import SavePlaylist from "./components/SavePlaylist";
 import Footer from "./components/Footer.js";
+import PlaylistLink from "./components/PlaylistLink.js";
 
 function App() {
   const [walkTime, updateWalkTime] = useState(5);
@@ -85,7 +86,10 @@ function App() {
       {/* Not sure if we want this button? Or if radio buttons populates podcast list? */}
       <div className="submitContainer">
       {theGenre != "" && apiKeyWord != "" && <button className="submitBtn" onClick={handleSubmit}>Submit</button>}
-      </div>      
+      </div> 
+
+      <PlaylistLink />
+     
       
       {genreFormSubmitted == 1 && <SavePlaylist allPodcasts={allPodcasts} loading={loading} />}
       {/* placed this in a ternary operator to control the order of operations -> only when users search results (allPodcasts) is displayed, will the savePlaylist run */}

@@ -32,7 +32,7 @@ const SavePlaylist = (props) => {
     return (
         <section id="savePlaylist">
             <form className="playlistForm savePlaylistWrapper">
-                <label className="formLabel">Save Your Playlist</label>
+                <label className="formLabel">Save this playlist</label>
                 <input
                     type="text"
                     id="playlist"
