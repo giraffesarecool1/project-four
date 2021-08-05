@@ -7,15 +7,14 @@ const SavePlaylist = (props) => {
     const [ userTitle, setUserTitle ] = useState('');
 
     useEffect( () => {
-        setPlaylist(props.allPodcasts.results);
-        console.log(props.allPodcasts.results);
+        props.loading ? setPlaylist(props.allPodcasts.results) : setPlaylist([])
+        // setPlaylist(props.allPodcasts.results);
+        // console.log(props.allPodcasts.results);
         console.log(playlist);
     }, []);
-    
-    // 1.
+
     const playlistObject = {
         userTitle: userTitle,
-        // array1: ['Chris', 'Nicky', 'Frank', 'Beth']
         userPlaylist: [...playlist]
     };
     
@@ -29,15 +28,12 @@ const SavePlaylist = (props) => {
         e.preventDefault();
         console.log(setPlaylist);
         const debRef = firebase.database().ref();    
-        //2. update state with the new object:
-        // setPlaylist(playlistObject);
         debRef.push(playlistObject);
-        // setPlaylist([])
+        console.log(playlist);
     }
 
 
-
-    return(
+    return (
         <div>
             <form>
                 <label>Save Playlist</label>

@@ -13,7 +13,8 @@ function App() {
   const [allPodcasts, setAllPodcasts] = useState([]);
   const [genreDisplay, setGenreDisplay] = useState(0);
   const [theGenre, setTheGenre] = useState("");
-  const [genreFormSubmitted, setGenreFormSubmitted] = useState(0);
+  // const [genreFormSubmitted, setGenreFormSubmitted] = useState(0);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     function changehandler(e) {
@@ -41,9 +42,11 @@ function App() {
       const PodcastArray = response.data;
       setAllPodcasts(PodcastArray);
       console.log(PodcastArray);
-    }).then(
-      setGenreFormSubmitted(1)
-    )
+      setLoading(true);
+    })
+    // .then(
+    //   setGenreFormSubmitted(1)
+    // )
   };
 
   const handleRadios = (e) => {
@@ -65,11 +68,13 @@ function App() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         displayGenreSelection={displayGenreSelection}
-        setGenreFormSubmitted={setGenreFormSubmitted}
+        // setGenreFormSubmitted={setGenreFormSubmitted}
       />
       {genreDisplay == 1 && <DisplayPodcasts handleRadios={handleRadios} />}
-      {genreFormSubmitted == 1 && <SavePlaylist allPodcasts={allPodcasts} />}
-      <Podcasts />   
+      {/* {genreFormSubmitted == 1 && <SavePlaylist allPodcasts={allPodcasts} loading={loading} />} */}
+      <SavePlaylist allPodcasts={allPodcasts} loading={loading} />
+
+      <Podcasts allPodcasts={allPodcasts} loading={loading} />
     </div>
   );
 }
