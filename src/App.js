@@ -30,7 +30,7 @@ function App() {
       },
       params: {
         q: "car",
-        top_level_only: 1,
+        // top_level_only: 1,
         type: "episode",
         len_min: walkTime - 2,
         len_max: walkTime + 2,
@@ -65,7 +65,10 @@ function App() {
         displayGenreSelection={displayGenreSelection}
       />
       {genreDisplay == 1 && <DisplayPodcasts handleRadios={handleRadios} />}
-      <Podcasts allPodcasts={allPodcasts} loading={loading}/>
+      <Podcasts 
+        allPodcasts={allPodcasts} 
+        loading={loading}
+      />
   
     </div>
   );
