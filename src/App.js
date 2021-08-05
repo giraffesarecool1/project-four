@@ -81,14 +81,16 @@ function App() {
         apiKeyWord={apiKeyWord}
       />
       {genreDisplay == 1 && <DisplayPodcasts handleRadios={handleRadios} />}
-      {genreFormSubmitted == 1 && <SavePlaylist allPodcasts={allPodcasts} loading={loading} />}
-      {/* placed this in a ternary operator to control the order of operations -> only when users search results (allPodcasts) is displayed, will the savePlaylist run */}
-      {loading ? <SavePlaylist allPodcasts={allPodcasts} /> : null}
 
       {/* Not sure if we want this button? Or if radio buttons populates podcast list? */}
       <div className="submitContainer">
       {theGenre != "" && apiKeyWord != "" && <button className="submitBtn" onClick={handleSubmit}>Submit</button>}
-      </div>  
+      </div>      
+      
+      {genreFormSubmitted == 1 && <SavePlaylist allPodcasts={allPodcasts} loading={loading} />}
+      {/* placed this in a ternary operator to control the order of operations -> only when users search results (allPodcasts) is displayed, will the savePlaylist run */}
+      {loading ? <SavePlaylist allPodcasts={allPodcasts} /> : null}
+
 
       <Podcasts 
         allPodcasts={allPodcasts} 
