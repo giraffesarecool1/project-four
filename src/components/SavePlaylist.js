@@ -2,49 +2,46 @@ import firebase from "../firebase";
 import { useState, useEffect } from "react";
 
 const SavePlaylist = (props) => {
-    // an empty state to hold the data for firebase
+    // empty states to hold the data for firebase
     const [ playlist, setPlaylist ] = useState([]);
     const [ userTitle, setUserTitle ] = useState('');
-    // const [ userResults, setUserResults ] = useState(props.allPodcasts.results);
-    // setUserResults(props.allPodcasts.results);
 
+    // this is set to run/load only when allPodcasts has been populated (as per ternary operator on app.js). When run, setPlaylist will populate playlist with the resulsts from allPodcasts (the users results from the api call)
     useEffect( () => {
-        props.loading ? setPlaylist(props.allPodcasts.results) : setPlaylist([]);
-        console.log('in useEffect', props.allPodcasts.results);
-        console.log('saveplaylist', props.loading)
+        setPlaylist(props.allPodcasts.results);
     }, []);
 
+    // the new Object to be stored to firebase -> the results from user selection and the playlist title written by the user in the save playlist form
     const playlistObject = {
         userTitle: userTitle,
         userPlaylist: [...playlist]
     };
-    
-    // anytime input field changes (user types in the playlist name text field), the change will be captured and put into the playlist (*see note below in form)
+    // Captures any changes that occur in the text input of the save playlist form(*for dry code - see note below, in form, about moving this code below)
     const handleChangeTitle= (e) => {
         setUserTitle(e.target.value);
-        // console.log(e.target.value);
     }
 
+    // when user click submit button for save playlist, the playlistObject is pushed to firebase
     const handleSubmitPlaylist = (e) => {
         e.preventDefault();
-        console.log(setPlaylist);
         const debRef = firebase.database().ref();    
         debRef.push(playlistObject);
-        console.log(playlist);
     }
 
-
+    // NOTE TO TEAM - I TRIED ADDING A REQUIRED ATTRIBUTE TO THE PLAYLIST NAME/TITLE, BUT IT DOESN'T SEEM TO BE WORKING HOW I EXPECT IT TO - USER CAN STILL SUBMIT THEIR PLAYLIST TO FIREBASE WITHOUT A TITLE?
     return (
         <div>
-            <form>
+            <form className="playlistForm">
                 <label>Save Playlist</label>
                 <input
                     type="text"
                     id="playlist"
+                    placeholder="name your playlist..."
+                    required="required"
+                    aria-required="true"
                     onChange={handleChangeTitle}
-                    // or can we eliminate the handleChange function and just put:
-                    // onChange={(e) => setPlaylistName(e.target.value)}
-                    // update this with the title:
+                    // could eliminate the handleChange function and just put:
+                    // onChange={(e) => setUserTitle(e.target.value)}
                     value={userTitle}
                 />
                 <button onClick={handleSubmitPlaylist} >Add Playlist</button>

@@ -72,7 +72,11 @@ function App() {
       />
       {genreDisplay == 1 && <DisplayPodcasts handleRadios={handleRadios} />}
       {genreFormSubmitted == 1 && <SavePlaylist allPodcasts={allPodcasts} loading={loading} />}
-      <SavePlaylist allPodcasts={allPodcasts} loading={loading} />
+      {/* placed this in a ternary operator to control the order of operations -> only when users search results (allPodcasts) is displayed, will the savePlaylist run */}
+      { loading ?
+        <SavePlaylist allPodcasts={allPodcasts} />
+        : null
+      }
 
       <Podcasts allPodcasts={allPodcasts} loading={loading} />
     </div>
