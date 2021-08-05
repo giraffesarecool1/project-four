@@ -349,6 +349,16 @@ header .logoWhite {
 .podcastsContainer {
   margin: 0 auto;
   max-width: 1080px;
+  text-align: center;
+}
+.podcastsTitle {
+  font-size: 2.5rem;
+  font-family: "Archivo", sans-serif;
+  text-transform: uppercase;
+  border-bottom: 3px solid #A060F2;
+  padding: 20px;
+  color: #000000;
+  margin: 0 60px;
 }
 .podcastsCatalogue {
   display: -webkit-box;

@@ -13,6 +13,7 @@ const Podcasts = (props) => {
   return (props.loading ?
     <section className="podcasts">
       <div className="podcastsContainer">
+        <h2 className="podcastsTitle">Your Podcasts</h2>
         <ul className="podcastsCatalogue">
           {
           podcasts.map((podcast) => {
