@@ -477,85 +477,71 @@ header .logoWhite {
   font-size: 1.8rem;
 }
 .inputForm input[type=range] {
-  width: 100%;
-  margin: 20px 0;
-  background-color: transparent;
+  width: 300px;
+  background: transparent;
+  margin-top: 20px;
+}
+.inputForm input[type=range] {
   -webkit-appearance: none;
-}
-.inputForm input[type=range]:focus {
-  outline: none;
-}
-.inputForm input[type=range]::-webkit-slider-runnable-track {
-  background: rgba(160, 96, 242, 0.78);
-  border: 0.2px solid #ffffff;
-  border-radius: 1.3px;
   width: 100%;
-  height: 8px;
-  cursor: pointer;
+  margin-top: 20px;
 }
 .inputForm input[type=range]::-webkit-slider-thumb {
-  margin-top: -4.5px;
-  width: 20px;
-  height: 20px;
-  background: #a060f2;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
   -webkit-appearance: none;
 }
-.inputForm input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #ae78f4;
-}
-.inputForm input[type=range]::-moz-range-track {
-  background: rgba(160, 96, 242, 0.78);
-  border: 0.2px solid #ffffff;
-  border-radius: 1.3px;
+.inputForm input[type=range]::-ms-track {
   width: 100%;
-  height: 8px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.inputForm input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  margin-top: -1.5px;
+  background: #000000;
   cursor: pointer;
 }
 .inputForm input[type=range]::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  background: #a060f2;
-  border: none;
-  border-radius: 15px;
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  background: #000000;
   cursor: pointer;
 }
-.inputForm input[type=range]::-ms-track {
-  background: transparent;
-  border-color: transparent;
-  border-width: 5.2px 0;
-  color: transparent;
+.inputForm input[type=range]::-ms-thumb {
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  background: #000000;
+  cursor: pointer;
+  margin: 0;
+}
+.inputForm input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 10px;
   cursor: pointer;
+  background: #A060F2;
 }
-.inputForm input[type=range]::-ms-fill-lower {
-  background: #9248f0;
-  border: 0.2px solid #ffffff;
-  border-radius: 2.6px;
+.inputForm input[type=range]:active::-webkit-slider-runnable-track {
+  background: #A060F2;
 }
-.inputForm input[type=range]::-ms-fill-upper {
-  background: rgba(160, 96, 242, 0.78);
-  border: 0.2px solid #ffffff;
-  border-radius: 2.6px;
-}
-.inputForm input[type=range]::-ms-thumb {
-  width: 20px;
-  height: 20px;
-  background: #a060f2;
-  border: none;
-  border-radius: 15px;
+.inputForm input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 10px;
   cursor: pointer;
-  margin-top: 0px;
-  /*Needed to keep the Edge thumb centred*/
+  background: #A060F2;
 }
-.inputForm input[type=range]:focus::-ms-fill-lower {
-  background: rgba(160, 96, 242, 0.78);
-}
-.inputForm input[type=range]:focus::-ms-fill-upper {
-  background: #ae78f4;
+.inputForm input[type=range]::-ms-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
 }
 
 .genresBtn,
