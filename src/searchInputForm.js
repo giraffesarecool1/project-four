@@ -53,9 +53,10 @@ function SearchInputForm(props) {
                 <button className="genresBtn" onClick={props.displayGenreSelection}>Select a Genre</button> 
 
                 {/* Not sure if we want this button? Or if radio buttons populates podcast list? */}
-            <button className="submitBtn" onClick={props.handleSubmit}>Submit</button>           
+                <button className="submitBtn" onClick={props.handleSubmit}>Submit</button>
+                           
             </div>
-        </section>
+        </section>    
     );
 };
 
