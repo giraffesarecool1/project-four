@@ -7,16 +7,23 @@ import Header from "./components/Header";
 import DisplayPodcasts from "./DisplayPodcasts.js";
 import Podcasts from "./components/Podcasts";
 import SavePlaylist from "./components/SavePlaylist";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer.js";
 
 function App() {
-  const [walkTime, updateWalkTime] = useState(1);
+  const [walkTime, updateWalkTime] = useState(5);
   const [allPodcasts, setAllPodcasts] = useState([]);
   const [genreDisplay, setGenreDisplay] = useState(0);
   const [theGenre, setTheGenre] = useState("");
   const [genreFormSubmitted, setGenreFormSubmitted] = useState(0);
   const [loading, setLoading] = useState(false);
-
+  const [apiKeyWord, setKeyWord] = useState("")
+  
+  const handleChangeKeyword = (e) => {
+    function wordChanger(e) {
+      setKeyWord(e.target.value);
+    }
+    wordChanger(e)
+  }
   const handleChange = (e) => {
     function changehandler(e) {
       updateWalkTime(e.target.value);
@@ -33,7 +40,7 @@ function App() {
         "X-ListenAPI-Key": "0646ea62032045e0b681095308e28e1a",
       },
       params: {
-        q: "car",
+        q: apiKeyWord,
         // top_level_only: 1,
         type: "episode",
         len_min: +walkTime - 2,
@@ -69,16 +76,26 @@ function App() {
         handleSubmit={handleSubmit}
         displayGenreSelection={displayGenreSelection}
         setGenreFormSubmitted={setGenreFormSubmitted}
+        theGenre={theGenre}
+        handleChangeKeyword={handleChangeKeyword}
+        apiKeyWord={apiKeyWord}
       />
       {genreDisplay == 1 && <DisplayPodcasts handleRadios={handleRadios} />}
       {genreFormSubmitted == 1 && <SavePlaylist allPodcasts={allPodcasts} loading={loading} />}
       {/* placed this in a ternary operator to control the order of operations -> only when users search results (allPodcasts) is displayed, will the savePlaylist run */}
-      { loading ?
-        <SavePlaylist allPodcasts={allPodcasts} />
-        : null
-      }
+      {loading ? <SavePlaylist allPodcasts={allPodcasts} /> : null}
 
-      <Podcasts allPodcasts={allPodcasts} loading={loading} />
+      {/* Not sure if we want this button? Or if radio buttons populates podcast list? */}
+      <div className="submitContainer">
+      {theGenre != "" && apiKeyWord != "" && <button className="submitBtn" onClick={handleSubmit}>Submit</button>}
+      </div>  
+
+      <Podcasts 
+        allPodcasts={allPodcasts} 
+        loading={loading}
+      />
+  
+      <Footer />
     </div>
   );
 }

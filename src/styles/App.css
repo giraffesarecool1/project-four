@@ -480,11 +480,13 @@ header .logoWhite {
   width: 300px;
   background: transparent;
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 .inputForm input[type=range] {
   -webkit-appearance: none;
   width: 100%;
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 .inputForm input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -498,25 +500,25 @@ header .logoWhite {
 }
 .inputForm input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 13px;
-  width: 13px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
-  margin-top: -1.5px;
-  background: #000000;
+  margin-top: -4px;
+  background: #A060F2;
   cursor: pointer;
 }
 .inputForm input[type=range]::-moz-range-thumb {
-  height: 13px;
-  width: 13px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
-  background: #000000;
+  background: #A060F2;
   cursor: pointer;
 }
 .inputForm input[type=range]::-ms-thumb {
-  height: 13px;
-  width: 13px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
-  background: #000000;
+  background: #A060F2;
   cursor: pointer;
   margin: 0;
 }
@@ -635,6 +637,10 @@ header .logoWhite {
 .playlistBtn {
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+.submitContainer {
+  text-align: center;
 }
 
 footer {
