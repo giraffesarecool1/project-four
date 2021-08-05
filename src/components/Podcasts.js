@@ -32,7 +32,7 @@ const Podcasts = (props) => {
               return (
                 <li className="podcastsCatalogueItem" key={podcast.id}>
                   <img src={podcast.thumbnail} alt={podcast.title} />
-                  {/* <p className="podcastsCatalogueItemTitle">{podcast.title}</p> */}
+                  <p className="podcastsCatalogueItemTitle">{podcast.title}</p>
                   <div className="podcastsCatalogueItemDesc">{podcast.description}</div>
                   <AddFavorite />
                 </li>
