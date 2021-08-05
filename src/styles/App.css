@@ -244,6 +244,7 @@ h1, h2, h3, h4, p {
   margin: 0;
 }
 
+/* Mixin to manage responsive breakpoints */
 * {
   margin: 0;
   padding: 0;
@@ -256,6 +257,7 @@ body {
 
 a, a:visited, a:hover {
   text-decoration: none;
+  color: #000000;
 }
 
 img {
@@ -271,7 +273,6 @@ li {
   list-style: none;
 }
 
-/* Mixin to manage responsive breakpoints */
 .wrapper {
   width: 80%;
   margin: 0 auto;
@@ -348,6 +349,16 @@ header .logoWhite {
 .podcastsContainer {
   margin: 0 auto;
   max-width: 1080px;
+  text-align: center;
+}
+.podcastsTitle {
+  font-size: 2.5rem;
+  font-family: "Archivo", sans-serif;
+  text-transform: uppercase;
+  border-bottom: 3px solid #A060F2;
+  padding: 20px;
+  color: #000000;
+  margin: 0 60px;
 }
 .podcastsCatalogue {
   display: -webkit-box;
@@ -423,13 +434,34 @@ header .logoWhite {
 }
 .podcastsCatalogueItemDesc {
   font-family: "Archivo", sans-serif;
-  font-weight: 500;
-  font-size: 1rem;
+  font-weight: 400;
+  font-size: 1.2rem;
   margin-top: 20px;
+  position: relative;
+  max-height: 2.8rem;
   overflow: hidden;
-  text-overflow: ellipsis;
-  width: 190px;
-  height: 20px;
+  padding-right: 1.5rem;
+}
+.podcastsCatalogueItemDescTruncate::before {
+  position: absolute;
+  content: "...";
+  bottom: 0;
+  right: 1rem;
+  z-index: 1;
+}
+.podcastsCatalogueItemDescTruncate::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+  width: 1rem;
+  z-index: 0;
+  background: #fff;
+}
+.podcastsCatalogueItemLength {
+  font-family: "Archivo", sans-serif;
+  font-size: 1.3rem;
+  margin-top: 20px;
 }
 .podcastsCatalogueItemAdd {
   position: absolute;
