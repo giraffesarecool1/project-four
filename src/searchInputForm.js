@@ -52,6 +52,7 @@ function SearchInputForm(props) {
 
                 <button className="genresBtn" onClick={props.displayGenreSelection}>Select a Genre</button>            
             </div>
+            <button className="submitBtn" onClick={props.handleSubmit}>Submit</button>
         </section>
     );
 };

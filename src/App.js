@@ -12,6 +12,7 @@ function App() {
   const [allPodcasts, setAllPodcasts] = useState([]);
   const [genreDisplay, setGenreDisplay] = useState(0);
   const [theGenre, setTheGenre] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     function changehandler(e) {
@@ -38,6 +39,7 @@ function App() {
     }).then((response) => {
       const PodcastArray = response.data;
       setAllPodcasts(PodcastArray);
+      setLoading(true);
       console.log(PodcastArray);
     });
   };
@@ -63,8 +65,8 @@ function App() {
         displayGenreSelection={displayGenreSelection}
       />
       {genreDisplay == 1 && <DisplayPodcasts handleRadios={handleRadios} />}
-      <Podcasts />   
-      
+      <Podcasts allPodcasts={allPodcasts} loading={loading}/>
+  
     </div>
   );
 }
