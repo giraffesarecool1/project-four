@@ -70,7 +70,7 @@ function App() {
 
       {/* Not sure if we want this button? Or if radio buttons populates podcast list? */}
       <div className="submitContainer">
-        <button className="submitBtn" onClick={handleSubmit}>Submit</button>
+      {theGenre != "" && apiKeyWord != "" && <button className="submitBtn" onClick={handleSubmit}>Submit</button>}
       </div>  
 
       <Podcasts 
