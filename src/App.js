@@ -1,6 +1,5 @@
 import "./styles/App.css";
 import axios from "axios";
-import firebase from "firebase";
 import React, { useState } from "react";
 import SearchInputForm from "./components/SearchInputForm.js";
 import Header from "./components/Header";
@@ -10,7 +9,6 @@ import SavePlaylist from "./components/SavePlaylist";
 import Footer from "./components/Footer.js";
 import PlaylistLink from "./components/PlaylistLink.js";
 import DisplayPlaylist from "./components/DisplayPlaylist";
-import { AiFillPropertySafety } from "react-icons/ai";
 
 function App() {
   const [walkTime, updateWalkTime] = useState(5);
@@ -21,7 +19,6 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [apiKeyWord, setKeyWord] = useState("");
   const [toggle, setToggle] = useState(0);
-  const [userSavedPlaylist, setUserSavedPlaylist] = useState([]);
   const [renderFromSavedOrNot, setRenderFromSavedOrNot] = useState(0);
 
   const fetchUserSavedPlaylist = (userPlayListThatIsBeingFetched) => {
@@ -30,7 +27,6 @@ function App() {
     setRenderFromSavedOrNot(1);
     setLoading(true);
   }
-
 
   const handleChangeKeyword = (e) => {
     function wordChanger(e) {
@@ -56,7 +52,6 @@ function App() {
       },
       params: {
         q: apiKeyWord,
-        // top_level_only: 1,
         type: "episode",
         len_min: +walkTime - 2,
         len_max: +walkTime + 2,
@@ -84,7 +79,7 @@ function App() {
 
   const playlistDisplayControl = (e) => {
     e.preventDefault();
-    toggle == 1 ? setToggle(0) : setToggle(1);
+    toggle === 1 ? setToggle(0) : setToggle(1);
   }
   return (
     <div className="App">
@@ -99,34 +94,24 @@ function App() {
         handleChangeKeyword={handleChangeKeyword}
         apiKeyWord={apiKeyWord}
       />
-      {genreDisplay == 1 && <DisplayPodcasts handleRadios={handleRadios} />}
+      {genreDisplay === 1 && <DisplayPodcasts handleRadios={handleRadios} />}
 
-      {/* Not sure if we want this button? Or if radio buttons populates podcast list? */}
       <div className="submitContainer">
-        {theGenre != "" && apiKeyWord != "" && <button className="submitBtn" onClick={handleSubmit}>Submit</button>}
+        {theGenre !== "" && apiKeyWord !== "" && <button className="submitBtn" onClick={handleSubmit}>Submit</button>}
       </div>
 
       <PlaylistLink playlistDisplayControl={playlistDisplayControl} />
 
+      {genreFormSubmitted === 1 && <SavePlaylist allPodcasts={allPodcasts} loading={loading} />}
 
-      {genreFormSubmitted == 1 && <SavePlaylist allPodcasts={allPodcasts} loading={loading} />}
-      {/* placed this in a ternary operator to control the order of operations -> only when users search results (allPodcasts) is displayed, will the savePlaylist run */}
       {loading ? <SavePlaylist allPodcasts={allPodcasts} /> : null}
 
-      {toggle == 1 && <DisplayPlaylist fetchUserSavedPlaylist={fetchUserSavedPlaylist} />}
+      {toggle === 1 && <DisplayPlaylist fetchUserSavedPlaylist={fetchUserSavedPlaylist} />}
 
       <Podcasts
         allPodcasts={allPodcasts}
         loading={loading}
       />
-
-      {/* {renderFromSavedOrNot === 0 ? <Podcasts 
-        allPodcasts={allPodcasts} 
-        loading={loading}
-      /> : <Podcasts 
-      allPodcasts={userSavedPlaylist} 
-      loading={true}
-    />} */}
 
       <Footer />
     </div>

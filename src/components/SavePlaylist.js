@@ -18,7 +18,7 @@ const SavePlaylist = (props) => {
     };
     
     // Captures any changes that occur in the text input of the save playlist form(*for dry code - see note below, in form, about moving this code below)
-    const handleChangeTitle= (e) => {
+    const handleChangeTitle = (e) => {
         setUserTitle(e.target.value);
     }
 
