@@ -2,9 +2,14 @@
 
 //searchInput Form & savePlaylist Form styles (below)
 .formWrapper {
+width: 60%;
+margin: 0 auto;
+
+  @include breakpoint("md") {
     width: 40%;
     margin: 0 auto;
     max-width: 1080px;
+}
 }
 
 .inputForm {
