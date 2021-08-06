@@ -9,6 +9,7 @@ import Podcasts from "./components/Podcasts";
 import SavePlaylist from "./components/SavePlaylist";
 import Footer from "./components/Footer.js";
 import PlaylistLink from "./components/PlaylistLink.js";
+import DisplayPlaylist from "./components/DisplayPlaylist";
 
 function App() {
   const [walkTime, updateWalkTime] = useState(5);
@@ -17,7 +18,8 @@ function App() {
   const [theGenre, setTheGenre] = useState("");
   const [genreFormSubmitted, setGenreFormSubmitted] = useState(0);
   const [loading, setLoading] = useState(false);
-  const [apiKeyWord, setKeyWord] = useState("")
+  const [apiKeyWord, setKeyWord] = useState("");
+  const [testing, setTesting] = useState(0);
   
   const handleChangeKeyword = (e) => {
     function wordChanger(e) {
@@ -68,6 +70,9 @@ function App() {
     setGenreDisplay(1);
   };
 
+  const playlistDisplayControl = () => {
+    testing == 1 ? setTesting(0) : setTesting(1);
+  }
   return (
     <div className="App">
       <Header />
@@ -88,13 +93,14 @@ function App() {
       {theGenre != "" && apiKeyWord != "" && <button className="submitBtn" onClick={handleSubmit}>Submit</button>}
       </div> 
 
-      <PlaylistLink />
+      <PlaylistLink playlistDisplayControl={playlistDisplayControl} />
      
       
       {genreFormSubmitted == 1 && <SavePlaylist allPodcasts={allPodcasts} loading={loading} />}
       {/* placed this in a ternary operator to control the order of operations -> only when users search results (allPodcasts) is displayed, will the savePlaylist run */}
       {loading ? <SavePlaylist allPodcasts={allPodcasts} /> : null}
 
+      {testing == 1 && <DisplayPlaylist />}
 
       <Podcasts 
         allPodcasts={allPodcasts} 
