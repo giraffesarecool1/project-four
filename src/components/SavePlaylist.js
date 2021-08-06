@@ -41,15 +41,12 @@ const SavePlaylist = (props) => {
                     required="required"
                     aria-required="true"
                     onChange={handleChangeTitle}
-                    // could eliminate the handleChange function and just put:
-                    // onChange={(e) => setUserTitle(e.target.value)}
                     value={userTitle}
                 />
-                <button className="playlistBtn" onClick={handleSubmitPlaylist} >Add Playlist</button>
+                {userTitle !== "" && <button className="playlistBtn" onClick={handleSubmitPlaylist} >Add Playlist</button>}
             </form>
         </section>
     )
-
 }
 
 export default SavePlaylist;

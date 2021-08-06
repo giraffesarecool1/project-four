@@ -33,7 +33,7 @@
     border-radius: 12px;
     color: $purple;
     margin-bottom: 50px;
-    font-family: "Poppins", sans-serif;
+    font-family: $font-secondary;
     font-weight: 300;
     font-size: 2.5rem;
   }
@@ -47,7 +47,7 @@
 }
 
 header {
-  background-color: black;
+  background-color: $black;
   height: 100vh;
 
   img {
@@ -55,13 +55,13 @@ header {
   }
 
   h1 {
-    font-family: "Archivo", sans-serif;
+    font-family: $font-primary;
     font-weight: 500;
     font-size: 4rem;
   }
 
   p {
-    font-family: "Poppins", sans-serif;
+    font-family: $font-secondary;
     font-weight: 300;
     font-size: 2rem;
   }
