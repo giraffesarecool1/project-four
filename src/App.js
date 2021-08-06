@@ -67,7 +67,7 @@ function App() {
 
   const handleRadios = (e) => {
     function radioHandler(e) {
-      setTheGenre(e.target.value);
+      setTheGenre(e.target.id);
       setGenreDisplay(0);
     }
     radioHandler(e);
