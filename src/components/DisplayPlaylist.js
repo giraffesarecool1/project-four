@@ -29,6 +29,10 @@ const DisplayPlaylist = () => {
     }, []);
     console.log(allSavedPlaylists);
 
+    const handleSubmit = (aSavedPlaylist) => {
+        console.log(aSavedPlaylist)
+    }
+
     return(
         //2. set up where the grabbed data will be displayed:
         // this will be a menu containing a list of the playlists 
@@ -38,7 +42,7 @@ const DisplayPlaylist = () => {
                 {allSavedPlaylists.map((aSavedPlaylist) => {
                     return(
                         <li>
-                            <button >{aSavedPlaylist.userTitle}</button>
+                            <button onClick={handleSubmit(aSavedPlaylist.userPlaylist) } >{aSavedPlaylist.userTitle}</button>
                         </li>
                     )
                 })}
