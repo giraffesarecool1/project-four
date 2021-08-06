@@ -1,12 +1,12 @@
 import soundpurple from '../assets/soundpurple.png';
 
-const PlaylistLink = () => {
+const PlaylistLink = (props) => {
     return(
 
         <div className="playlistLink">
 
             <img src={soundpurple} alt="purple logo" className="purpleLogo" />
-            <a href="#playlists">View your playlists</a>
+            <a onClick={props.playlistDisplayControl} href="#playlists">View your playlists</a>
 
         </div>    
     )
