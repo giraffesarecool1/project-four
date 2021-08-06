@@ -25,10 +25,13 @@ function App() {
   const [renderFromSavedOrNot, setRenderFromSavedOrNot] = useState(0);
 
   const fetchUserSavedPlaylist = (userPlayListThatIsBeingFetched) => {
-    setUserSavedPlaylist(userPlayListThatIsBeingFetched);
-    console.log(userSavedPlaylist);
+    
+    setAllPodcasts({ results: userPlayListThatIsBeingFetched });
+    console.log(userPlayListThatIsBeingFetched);
     setRenderFromSavedOrNot(1);
+    setLoading(true);
   }
+
 
   const handleChangeKeyword = (e) => {
     function wordChanger(e) {
@@ -113,13 +116,18 @@ function App() {
 
       {testing == 1 && <DisplayPlaylist fetchUserSavedPlaylist={fetchUserSavedPlaylist} />}
 
-      {renderFromSavedOrNot === 0 ? <Podcasts
+      <Podcasts
         allPodcasts={allPodcasts}
         loading={loading}
-      /> : <Podcasts
-        allPodcasts={userSavedPlaylist}
-        loading={false}
-      />}
+      />
+
+      {/* {renderFromSavedOrNot === 0 ? <Podcasts 
+        allPodcasts={allPodcasts} 
+        loading={loading}
+      /> : <Podcasts 
+      allPodcasts={userSavedPlaylist} 
+      loading={true}
+    />} */}
 
       <Footer />
     </div>

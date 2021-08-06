@@ -27,7 +27,7 @@ const DisplayPlaylist = (props) => {
             setAllSavedPlaylists(newArray);
         })
     }, []);
-    // console.log(allSavedPlaylists);
+    //  console.log(allSavedPlaylists);
 
     return (
         //2. set up where the grabbed data will be displayed:
@@ -38,7 +38,7 @@ const DisplayPlaylist = (props) => {
                 {allSavedPlaylists.map((aSavedPlaylist) => {
                     return (
                         <li>
-                            <button onClick={props.fetchUserSavedPlaylist(aSavedPlaylist.userPlaylist)} >{aSavedPlaylist.userTitle}</button>
+                            <button onClick={() => props.fetchUserSavedPlaylist(aSavedPlaylist.userPlaylist)} >{aSavedPlaylist.userTitle}</button>
                         </li>
                     )
                 })}
