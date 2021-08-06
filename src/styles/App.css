@@ -684,20 +684,10 @@ header .logoWhite {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-<<<<<<< HEAD
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  vertical-align: center;
-=======
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
   text-align: center;
->>>>>>> bfcd35a3ea48d23a16f261f0d466e680616a09fc
   font-family: "Archivo", sans-serif, sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
@@ -766,16 +756,10 @@ header .logoWhite {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-<<<<<<< HEAD
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-=======
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
   padding-right: 30px;
->>>>>>> bfcd35a3ea48d23a16f261f0d466e680616a09fc
   font-family: "Archivo", sans-serif, sans-serif;
   font-size: 2rem;
 }
