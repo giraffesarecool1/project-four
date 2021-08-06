@@ -29,7 +29,7 @@ const DisplayPodcasts = (props) => {
                     theGenreList.map((genreObj) => {
                         return (
                             <div className="radioBtns" key={genreObj.id}>
-                                <input type="radio" value={genreObj.name} onChange={props.handleRadios}></input>
+                                <input type="radio" value={genreObj.name} id={genreObj.id} onChange={props.handleRadios}></input>
                                 <label>{genreObj.name}</label>
                             </div>                            
                         )
