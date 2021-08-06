@@ -34,11 +34,11 @@ const DisplayPlaylist = (props) => {
         // this will be a menu containing a list of the playlists 
         // - the title from our playlistObject (SavePlaylist component). When clicked/chosen, the userPlaylist(array of podcasts) from the playlistObject will be displayed 
         <div>
-            <ul>
+            <ul className="playlistTitleContainer">
                 {allSavedPlaylists.map((aSavedPlaylist) => {
                     return (
                         <li>
-                            <button onClick={() => props.fetchUserSavedPlaylist(aSavedPlaylist.userPlaylist)} >{aSavedPlaylist.userTitle}</button>
+                            <button className="playlistTitleBtn" onClick={() => props.fetchUserSavedPlaylist(aSavedPlaylist.userPlaylist)} >{aSavedPlaylist.userTitle}</button>
                         </li>
                     )
                 })}

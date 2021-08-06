@@ -2,9 +2,9 @@ import "./styles/App.css";
 import axios from "axios";
 import firebase from "firebase";
 import React, { useState } from "react";
-import SearchInputForm from "./searchInputForm.js";
+import SearchInputForm from "./components/SearchInputForm.js";
 import Header from "./components/Header";
-import DisplayPodcasts from "./DisplayPodcasts.js";
+import DisplayPodcasts from "./components/DisplayPodcasts.js";
 import Podcasts from "./components/Podcasts";
 import SavePlaylist from "./components/SavePlaylist";
 import Footer from "./components/Footer.js";
@@ -20,12 +20,11 @@ function App() {
   const [genreFormSubmitted, setGenreFormSubmitted] = useState(0);
   const [loading, setLoading] = useState(false);
   const [apiKeyWord, setKeyWord] = useState("");
-  const [testing, setTesting] = useState(0);
+  const [toggle, setToggle] = useState(0);
   const [userSavedPlaylist, setUserSavedPlaylist] = useState([]);
   const [renderFromSavedOrNot, setRenderFromSavedOrNot] = useState(0);
 
   const fetchUserSavedPlaylist = (userPlayListThatIsBeingFetched) => {
-    
     setAllPodcasts({ results: userPlayListThatIsBeingFetched });
     console.log(userPlayListThatIsBeingFetched);
     setRenderFromSavedOrNot(1);
@@ -85,7 +84,7 @@ function App() {
 
   const playlistDisplayControl = (e) => {
     e.preventDefault();
-    testing == 1 ? setTesting(0) : setTesting(1);
+    toggle == 1 ? setToggle(0) : setToggle(1);
   }
   return (
     <div className="App">
@@ -114,7 +113,7 @@ function App() {
       {/* placed this in a ternary operator to control the order of operations -> only when users search results (allPodcasts) is displayed, will the savePlaylist run */}
       {loading ? <SavePlaylist allPodcasts={allPodcasts} /> : null}
 
-      {testing == 1 && <DisplayPlaylist fetchUserSavedPlaylist={fetchUserSavedPlaylist} />}
+      {toggle == 1 && <DisplayPlaylist fetchUserSavedPlaylist={fetchUserSavedPlaylist} />}
 
       <Podcasts
         allPodcasts={allPodcasts}

@@ -1,0 +1,27 @@
+@use '../utilities/' as *;
+
+.playlistTitleContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.playlistTitleBtn {
+    font-family: $font-secondary;
+    font-weight: 300;
+    font-size: 1.2rem;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: $purple;
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+
+    &:hover {
+    background-color:rgba(17, 17, 17, 0.88);
+    color: white;
+    transition: all 0.2s ease-in-out;
+    }
+}
