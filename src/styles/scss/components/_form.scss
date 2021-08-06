@@ -2,9 +2,14 @@
 
 //searchInput Form & savePlaylist Form styles (below)
 .formWrapper {
+width: 60%;
+margin: 0 auto;
+
+  @include breakpoint("md") {
     width: 40%;
     margin: 0 auto;
     max-width: 1080px;
+}
 }
 
 .inputForm {
@@ -161,15 +166,21 @@
 
 .savePlaylistWrapper {
   display: flex;
+  width: 90%;
 
 }
 
 .playlistForm {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   align-items: center;
   justify-content: center;
   vertical-align: center;
+=======
+  align-items: flex-end;
+  text-align: center;
+>>>>>>> bfcd35a3ea48d23a16f261f0d466e680616a09fc
   font-family: $font-primary, sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
@@ -185,9 +196,9 @@
       font-size: 2rem;
     }
     input {
-      padding-left: 10px;
-      padding-top: 3px;
-      padding-bottom: 3px;
+      padding-left: 30px;
+      padding-top: 10px;
+      padding-bottom: 10px;
       margin-top: 10px;
       border: 1.5px solid $purple;
       border-radius: 4px;
@@ -200,11 +211,11 @@
 }
 
 .playlistBtn {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin-top: 10px;
   margin-bottom: 20px;
   width: 110px;
-  height: 25px;
+  height: 30px;
 }
 
 .submitContainer {
@@ -234,7 +245,12 @@
 .playlistLink {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   align-items: center;
+=======
+  align-items: flex-end;
+  padding-right: 30px;
+>>>>>>> bfcd35a3ea48d23a16f261f0d466e680616a09fc
   font-family: $font-primary, sans-serif;
   font-size: 2rem;
   

@@ -288,17 +288,34 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px;
+}
+@media (min-width: 769px) {
+  .headerContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 20px;
+  }
 }
 .headerTitle {
   color: #A060F2;
@@ -344,6 +361,15 @@ header p {
 header .logoWhite {
   width: 12%;
   vertical-align: middle;
+}
+
+.description {
+  padding-bottom: 80px;
+}
+@media (min-width: 769px) {
+  .description {
+    padding-bottom: 10px;
+  }
 }
 
 .podcastsContainer {
@@ -486,9 +512,15 @@ header .logoWhite {
 }
 
 .formWrapper {
-  width: 40%;
+  width: 60%;
   margin: 0 auto;
-  max-width: 1080px;
+}
+@media (min-width: 769px) {
+  .formWrapper {
+    width: 40%;
+    margin: 0 auto;
+    max-width: 1080px;
+  }
 }
 
 .inputForm {
@@ -641,6 +673,7 @@ header .logoWhite {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 90%;
 }
 
 .playlistForm {
@@ -651,6 +684,7 @@ header .logoWhite {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+<<<<<<< HEAD
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -658,6 +692,12 @@ header .logoWhite {
       -ms-flex-pack: center;
           justify-content: center;
   vertical-align: center;
+=======
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  text-align: center;
+>>>>>>> bfcd35a3ea48d23a16f261f0d466e680616a09fc
   font-family: "Archivo", sans-serif, sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
@@ -676,9 +716,9 @@ header .logoWhite {
   font-size: 2rem;
 }
 .playlistForm input {
-  padding-left: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin-top: 10px;
   border: 1.5px solid #A060F2;
   border-radius: 4px;
@@ -689,11 +729,11 @@ header .logoWhite {
 }
 
 .playlistBtn {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin-top: 10px;
   margin-bottom: 20px;
   width: 110px;
-  height: 25px;
+  height: 30px;
 }
 
 .submitContainer {
@@ -726,9 +766,16 @@ header .logoWhite {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+<<<<<<< HEAD
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+=======
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-right: 30px;
+>>>>>>> bfcd35a3ea48d23a16f261f0d466e680616a09fc
   font-family: "Archivo", sans-serif, sans-serif;
   font-size: 2rem;
 }
@@ -796,15 +843,20 @@ footer {
   color: white;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   height: 50px;
   text-align: center;
   padding-top: 12px;
   margin-top: 40px;
 }
+@media (min-width: 769px) {
+  footer {
+    font-size: 1.5rem;
+  }
+}
 footer a {
-  color: white;
+  color: white !important;
 }
 footer a:hover {
-  color: #A060F2;
+  color: #A060F2 !important;
 }
