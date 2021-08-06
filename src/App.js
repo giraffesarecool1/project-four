@@ -10,6 +10,7 @@ import SavePlaylist from "./components/SavePlaylist";
 import Footer from "./components/Footer.js";
 import PlaylistLink from "./components/PlaylistLink.js";
 import DisplayPlaylist from "./components/DisplayPlaylist";
+import { AiFillPropertySafety } from "react-icons/ai";
 
 function App() {
   const [walkTime, updateWalkTime] = useState(5);
@@ -20,7 +21,15 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [apiKeyWord, setKeyWord] = useState("");
   const [testing, setTesting] = useState(0);
-  
+  const [userSavedPlaylist, setUserSavedPlaylist] = useState([]);
+  const [renderFromSavedOrNot, setRenderFromSavedOrNot] = useState(0);
+
+  const fetchUserSavedPlaylist = (userPlayListThatIsBeingFetched) => {
+    setUserSavedPlaylist(userPlayListThatIsBeingFetched);
+    console.log(userSavedPlaylist);
+    setRenderFromSavedOrNot(1);
+  }
+
   const handleChangeKeyword = (e) => {
     function wordChanger(e) {
       setKeyWord(e.target.value);
@@ -34,6 +43,7 @@ function App() {
     changehandler(e);
   };
   const handleSubmit = (e) => {
+    setRenderFromSavedOrNot(0);
     e.preventDefault();
     axios({
       url: "https://listen-api.listennotes.com/api/v2/search",
@@ -55,7 +65,7 @@ function App() {
       setAllPodcasts(PodcastArray);
       setLoading(true);
       console.log(PodcastArray);
-    });    
+    });
   };
 
   const handleRadios = (e) => {
@@ -70,7 +80,8 @@ function App() {
     setGenreDisplay(1);
   };
 
-  const playlistDisplayControl = () => {
+  const playlistDisplayControl = (e) => {
+    e.preventDefault();
     testing == 1 ? setTesting(0) : setTesting(1);
   }
   return (
@@ -90,23 +101,26 @@ function App() {
 
       {/* Not sure if we want this button? Or if radio buttons populates podcast list? */}
       <div className="submitContainer">
-      {theGenre != "" && apiKeyWord != "" && <button className="submitBtn" onClick={handleSubmit}>Submit</button>}
-      </div> 
+        {theGenre != "" && apiKeyWord != "" && <button className="submitBtn" onClick={handleSubmit}>Submit</button>}
+      </div>
 
       <PlaylistLink playlistDisplayControl={playlistDisplayControl} />
-     
-      
+
+
       {genreFormSubmitted == 1 && <SavePlaylist allPodcasts={allPodcasts} loading={loading} />}
       {/* placed this in a ternary operator to control the order of operations -> only when users search results (allPodcasts) is displayed, will the savePlaylist run */}
       {loading ? <SavePlaylist allPodcasts={allPodcasts} /> : null}
 
-      {testing == 1 && <DisplayPlaylist />}
+      {testing == 1 && <DisplayPlaylist fetchUserSavedPlaylist={fetchUserSavedPlaylist} />}
 
-      <Podcasts 
-        allPodcasts={allPodcasts} 
+      {renderFromSavedOrNot === 0 ? <Podcasts
+        allPodcasts={allPodcasts}
         loading={loading}
-      />
-  
+      /> : <Podcasts
+        allPodcasts={userSavedPlaylist}
+        loading={false}
+      />}
+
       <Footer />
     </div>
   );
