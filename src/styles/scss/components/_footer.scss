@@ -12,10 +12,10 @@ footer {
     margin-top: 40px;
 
     a {
-        color: white;
+        color: white!important;
 
         &:hover {
-            color: $purple;
+            color: $purple!important;
         }
     }   
 }
