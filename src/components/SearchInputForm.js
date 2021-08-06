@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 
 function SearchInputForm(props) {
-    const [formData, updateFormData] = useState('');
-    const [allPhotos, setAllPhotos] = useState([]);
-    const [firstSubmitTracker, setFirstSubmit] = useState(0);
+
 
     return (
         <section id="getStarted">

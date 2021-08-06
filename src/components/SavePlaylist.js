@@ -29,7 +29,6 @@ const SavePlaylist = (props) => {
         debRef.push(playlistObject);
     }
 
-    // NOTE TO TEAM - I TRIED ADDING A REQUIRED ATTRIBUTE TO THE PLAYLIST NAME/TITLE, BUT IT DOESN'T SEEM TO BE WORKING HOW I EXPECT IT TO - USER CAN STILL SUBMIT THEIR PLAYLIST TO FIREBASE WITHOUT A TITLE?
     return (
         <section id="savePlaylist">
             <form className="playlistForm savePlaylistWrapper">
@@ -50,20 +49,3 @@ const SavePlaylist = (props) => {
 }
 
 export default SavePlaylist;
-
-
-
-// PSEUDO CODE:
-// Add/Save data to firebase. Build a 'save playlist' function - after a list of podcasts have been displayed, the user should be able to save the list by clicking a Save button.
-    // create a form for user to submit data- form should appear after/at the time the data from the api call is displayed
-    // Form needs to include an input for a playlist name & a submit button
-// set up handleChange to capture user input of playlist name
-// On submit/click of the Save button, push the data that was displayed by the API call into a new array
-    // API call results are in useState named allPodcasts ? - make the new array a copy of the array
-// Save that new array into firebase
-
-// create an object with two properties - 1. Title, 2. an array of the podcasts
-    // grab the input value from the form, save it to object Title
-    // grab the results array (allPodcasts), save it to the object as an array
-    // update the setPlaylist State with this object
-    // push the playlist to firebase
