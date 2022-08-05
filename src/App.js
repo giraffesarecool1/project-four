@@ -83,6 +83,7 @@ function App() {
     setGenreDisplay(1);
   };
 
+  
   const playlistDisplayControl = (e) => {
     e.preventDefault();
     toggle == 1 ? setToggle(0) : setToggle(1);
