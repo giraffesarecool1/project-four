@@ -28,7 +28,7 @@ const Podcasts = (props) => {
                       <img src={podcast.thumbnail} alt={podcast.title} />
                       <p className="podcastsCatalogueItemTitle">{podcast.title_original}</p>
                       <div className="podcastsCatalogueItemDesc">
-                        <div className="podcastsCatalogueItemDescTruncate">{podcast.description_original}</div>
+                        <div className="podcastsCatalogueItemDescTruncate">{podcast.description_original.replaceAll(<[^>]*>g, '')}</div>
                       </div>
                       <div className="podcastsCatalogueItemLength">Length: {Math.floor(podcast.audio_length_sec / 60)} min</div>
                     </a>
