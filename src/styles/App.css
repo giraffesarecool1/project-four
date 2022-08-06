@@ -686,7 +686,7 @@ header .logoWhite {
           flex-direction: column;
   -webkit-box-align: end;
       -ms-flex-align: end;
-          align-items: flex-end;
+          align-items: center;
   text-align: center;
   font-family: "Archivo", sans-serif, sans-serif;
   font-weight: 400;
